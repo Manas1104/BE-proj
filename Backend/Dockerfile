@@ -11,7 +11,6 @@ COPY package*.json ./
 RUN npm install
 
 # Copy environment file
-COPY .env .env
 
 # Copy the rest of your backend code
 COPY . .

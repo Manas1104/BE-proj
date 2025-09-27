@@ -6,6 +6,9 @@ const path = require('path');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./swagger.yaml');
+const swaggerJsdoc = require('swagger-jsdoc');
+
+const app = express();
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
@@ -15,14 +18,14 @@ const documentRoutes = require('./routes/documentRoutes');
 const userRoutes = require('./routes/userRoutes');
 const doctorRoutes = require('./routes/doctorRoutes');
 
-const app = express();
+
 
 // ✅ Connect to MongoDB
 connectDB();
 
 // ✅ Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "*", // allow frontend domain
+  origin: 'http://localhost:5173', // allow your frontend
   credentials: true
 }));
 app.use(express.json());  
@@ -42,6 +45,24 @@ app.use('/api/doctors', doctorRoutes);
 app.get('/health', (req, res) => res.json({ status: "ok" }));
 
 // ✅ Swagger docs
+
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: "3.0.0",
+    info: {
+      title: "CareConnect API",
+      version: "1.0.0",
+      description: "API documentation",
+    },
+    servers: [
+      {
+        url: process.env.FRONTEND_URL || "http://localhost:5000",
+      },
+    ],
+  },
+  apis: ["api/routes/*.js"], // where your API routes are defined
+};
+const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // ✅ Start server

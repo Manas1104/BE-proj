@@ -12,6 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </AppContextProvider>
   </BrowserRouter>,
 )
+<<<<<<< HEAD
 
 // ✅ Fetch profile with token
 const token = localStorage.getItem("token");
@@ -30,3 +31,5 @@ if (token) {
 } else {
   console.log("No token found. Please login first.");
 }
+=======
+>>>>>>> d6ececb12d2c9a1beed2d4342117b300af72dbec

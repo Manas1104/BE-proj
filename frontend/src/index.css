@@ -31,4 +31,8 @@ html, body, #root {
 /* Hide scrollbar */
 ::-webkit-scrollbar {
   @apply hidden;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d6ececb12d2c9a1beed2d4342117b300af72dbec

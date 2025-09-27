@@ -10,10 +10,16 @@ import Appointment from './pages/Appointment'
 import MyAppointments from './pages/MyAppointments'
 import MyProfile from './pages/MyProfile'
 import Footer from './components/Footer'
+<<<<<<< HEAD
 import MapPage from './components/MapPage' 
 
 const App = () => {
   
+=======
+import MapPage from './components/MapPage' // Import Leaflet Map page
+
+const App = () => {
+>>>>>>> d6ececb12d2c9a1beed2d4342117b300af72dbec
   return (
     <div className='mx-4 sm:mx-[10%]'>
       <Navbar />
@@ -27,11 +33,19 @@ const App = () => {
         <Route path='/appointment/:docId' element={<Appointment />} />
         <Route path='/my-appointments' element={<MyAppointments />} />
         <Route path='/my-profile' element={<MyProfile />} />
+<<<<<<< HEAD
         <Route path="/map" element={<MapPage />} />  
+=======
+        <Route path='/map' element={<MapPage />} /> {/* Add Leaflet Map route */}
+>>>>>>> d6ececb12d2c9a1beed2d4342117b300af72dbec
       </Routes>
       <Footer />
     </div>
   )
 }
 
+<<<<<<< HEAD
 export default App
+=======
+export default App
+>>>>>>> d6ececb12d2c9a1beed2d4342117b300af72dbec

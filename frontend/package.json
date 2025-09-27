@@ -12,7 +12,11 @@
   "dependencies": {
     "axios": "^1.7.3",
     "leaflet": "^1.9.4",
+<<<<<<< HEAD
     "node": "^24.8.0",
+=======
+    "leaflet-geosearch": "^4.2.2",
+>>>>>>> d6ececb12d2c9a1beed2d4342117b300af72dbec
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-leaflet": "^4.2.1",

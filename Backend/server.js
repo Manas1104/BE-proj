@@ -6,9 +6,12 @@ const path = require('path');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./swagger.yaml');
+<<<<<<< HEAD
 const swaggerJsdoc = require('swagger-jsdoc');
 
 const app = express();
+=======
+>>>>>>> d6ececb12d2c9a1beed2d4342117b300af72dbec
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
@@ -18,14 +21,22 @@ const documentRoutes = require('./routes/documentRoutes');
 const userRoutes = require('./routes/userRoutes');
 const doctorRoutes = require('./routes/doctorRoutes');
 
+<<<<<<< HEAD
 
+=======
+const app = express();
+>>>>>>> d6ececb12d2c9a1beed2d4342117b300af72dbec
 
 // ✅ Connect to MongoDB
 connectDB();
 
 // ✅ Middleware
 app.use(cors({
+<<<<<<< HEAD
   origin: 'http://localhost:5173', // allow your frontend
+=======
+  origin: process.env.FRONTEND_URL || "*", // allow frontend domain
+>>>>>>> d6ececb12d2c9a1beed2d4342117b300af72dbec
   credentials: true
 }));
 app.use(express.json());  
@@ -45,6 +56,7 @@ app.use('/api/doctors', doctorRoutes);
 app.get('/health', (req, res) => res.json({ status: "ok" }));
 
 // ✅ Swagger docs
+<<<<<<< HEAD
 
 const swaggerOptions = {
   swaggerDefinition: {
@@ -63,6 +75,8 @@ const swaggerOptions = {
   apis: ["api/routes/*.js"], // where your API routes are defined
 };
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
+=======
+>>>>>>> d6ececb12d2c9a1beed2d4342117b300af72dbec
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // ✅ Start server

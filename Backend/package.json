@@ -17,8 +17,11 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.1",
     "multer": "^2.0.2",
+<<<<<<< HEAD
     "node": "^24.8.0",
     "swagger-jsdoc": "^6.2.8",
+=======
+>>>>>>> d6ececb12d2c9a1beed2d4342117b300af72dbec
     "swagger-ui-express": "^5.0.1",
     "yamljs": "^0.3.0"
   }

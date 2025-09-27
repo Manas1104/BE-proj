@@ -4,20 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global height fix for Leaflet map */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Your font */
 * {
-    font-family: Outfit;
+  font-family: 'Outfit', sans-serif;
 }
 
+/* Active nav hr */
 .active hr {
-    @apply block
+  @apply block;
 }
 
-@media (max-width:740px) {
-    .active  p{
-       @apply text-white bg-primary
-    }
+/* Responsive styles */
+@media (max-width: 740px) {
+  .active p {
+    @apply text-white bg-primary;
+  }
 }
 
+/* Hide scrollbar */
 ::-webkit-scrollbar {
-    @apply hidden
+  @apply hidden;
 }
